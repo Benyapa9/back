@@ -11,4 +11,6 @@ public interface GameProgressRepository extends JpaRepository<GameProgress, Long
     Optional<GameProgress> findByUserId(Long userId);
 
     Optional<GameProgress> findByUserIdAndAnimalType(Long userId, String animalType);
+
+
 }

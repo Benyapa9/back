@@ -27,7 +27,7 @@ public class GameProgress {
     @Column(name = "completed", nullable = false)
     private Boolean completed = false; // ระบุสถานะว่าเกมเสร็จสมบูรณ์หรือยัง
 
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "text")
     private String description; // ข้อมูลคำอธิบาย (เฉพาะผู้ป่วย)
 
     @Column(name = "last_updated", nullable = false)
@@ -120,10 +120,14 @@ public class GameProgress {
 
     // Getter และ Setter สำหรับ symptomNotes
     public Map<Integer, String> getSymptomNotes() {
+        if (symptomNotes == null) {
+            symptomNotes = new HashMap<>();
+        }
         return symptomNotes;
     }
 
     public void setSymptomNotes(Map<Integer, String> symptomNotes) {
         this.symptomNotes = symptomNotes;
     }
+
 }
